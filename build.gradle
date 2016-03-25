@@ -1,0 +1,41 @@
+group 'com.undsf'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.3.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = 1.7
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //Spring
+    compile 'org.springframework.boot:spring-boot-starter-web:1.3.3.RELEASE'
+    compile 'org.springframework:spring-jdbc:4.2.5.RELEASE'
+
+    //MyBatis
+    compile 'org.mybatis:mybatis:3.3.1'
+    compile 'org.mybatis:mybatis-spring:1.2.4'
+    compile 'mysql:mysql-connector-java:5.1.38'
+
+    //DataSourceBuilder dependency
+    compile 'org.apache.commons:commons-dbcp2:2.1.1'
+
+    //Gson
+    compile 'com.google.code.gson:gson:2.6.2'
+
+    testCompile 'junit:junit:4.12'
+
+}

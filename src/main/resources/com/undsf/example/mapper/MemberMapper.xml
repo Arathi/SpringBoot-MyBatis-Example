@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.undsf.example.mapper.MemberMapper">
+    <resultMap id="memberMap" type="member">
+        <id property="id" column="member_id" />
+        <result property="name" column="nickname"/>
+    </resultMap>
+
+    <select id="getMembers" resultMap="memberMap">
+        SELECT member_id,nickname FROM member
+    </select>
+
+    <select id="getMemberById" resultMap="memberMap" parameterType="int">
+        SELECT member_id,nickname FROM member WHERE member_id = #{id}
+    </select>
+
+    <select id="getMemberByName" resultMap="memberMap" parameterType="string">
+        SELECT member_id,nickname FROM member WHERE nickname = #{name}
+    </select>
+
+</mapper>
