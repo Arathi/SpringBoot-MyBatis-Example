@@ -3,8 +3,6 @@ version '1.0-SNAPSHOT'
 
 buildscript {
     repositories {
-        // maven{ url 'http://maven.oschina.net/content/groups/public/' }
-        // jcenter()
         maven{ url 'http://repo.spring.io/release/' }
         mavenCentral()
     }
@@ -20,6 +18,9 @@ sourceCompatibility = 1.8
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 repositories {
+    // maven{ url 'http://maven.oschina.net/content/groups/public/' }
+    // jcenter()
+    maven{ url 'http://repo.spring.io/release/' }
     mavenCentral()
 }
 
